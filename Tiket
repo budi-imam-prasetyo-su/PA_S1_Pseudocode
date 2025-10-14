@@ -48,11 +48,16 @@ Module Tiket()
     Input tiket
     If tiket < 1
         Display "Jumlah tiket minimal 1!"
-        Stop
+        Else
+        Display "Silahkan memilih Kursi"
     End If
 
     For i = 1 To tiket
-        Display "Masukkan kode kursi ke-", i, " (misal C1, D4): "
+        If (Tiket == 1) then
+        Display "Kode kursi yang diinginkan (misal C1, D4): "
+        Input Kursi[i]
+        Else
+        Display "Kode kursi ke-%d (misal C1, D4): "
         Input Kursi[i]
     End For
 
