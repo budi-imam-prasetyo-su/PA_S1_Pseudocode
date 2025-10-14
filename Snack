@@ -1,5 +1,7 @@
 Module Snack()
     Declare Int pilihansnack
+    Declare Int snack
+    Declare Int i
     Repeat
         Display "=============================="
         Display "         PILIHAN SNACK         "
@@ -9,11 +11,29 @@ Module Snack()
         Display "3. Popcorn Asin XL + Sprite (150.000)"
         Display "4. Popcorn Asin XL (50.000)"
         Display "5. Popcorn Manis + Asin + Sprite (250.000)"
+        Display "6. Keluar"
         Display "=============================="
         Display "Pilih Snack (1-5): "
         Input pilihansnack
-        If pilihansnack < 1 OR pilihansnack > 5 Then
-            Display "Error! Harus memilih 1-5"
-        EndIf
-    Until pilihansnack >= 1 AND pilihansnack <= 5
+
+Display "Masukkan jumlah Snack yang dibeli: "
+    Input pilihansnack
+    If pilihansnack > 5 Then
+        Display "Selamat Menonton"
+        Stop
+    End If
+
+    For i = 1 To pilihansnack
+        If (pilihansnack == 1)
+        Display "Pilih Paket yang diinginkan: ", i
+        Input snack[i]
+        Else
+        Display "Pilih Paket yang diinginkan ke-", i, ": "
+        Input snack[i]
+    End For
+
+    Display "Paket yang Anda pilih:"
+    For i = 1 To pilihansnack
+        Display snack[i]
+    End For
 End Module
