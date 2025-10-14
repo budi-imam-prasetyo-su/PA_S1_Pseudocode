@@ -1,0 +1,46 @@
+Module Film()
+    Declare Int tiket
+    Declare Char tayang
+    Declare Char film
+
+    Display "============================"
+    Display "       SEDANG TAYANG        "
+    Display "============================"
+    Display "1. Tukar Takdir"
+    Display "2. Jembatan Shiratal Mustaqim"
+    Display "3. Tron: Ares"
+    Display "4. Chainsaw Man - The Movie: Reze Arc"
+    Display "5. Rest Area"
+    Display "6. Dibalik Pintu Kematian"
+    Display "7. Superman"
+    Display "8. Tumbal Darah"
+    Display "9. Rangga & Cinta"
+    Display "10. Good Boy"
+
+    Display "Pilih Film (Angka): "
+    Input film
+    Switch (film)
+        Case 1: Display "Anda memilih: Tukar Takdir" Break
+        Case 2: Display "Anda memilih: Jembatan Shiratal Mustaqim" Break
+        Case 3: Display "Anda memilih: Tron: Ares" Break
+        Case 4: Display "Anda memilih: Chainsaw Man – The Movie: Reze Arc" Break
+        Case 5: Display "Anda memilih: Rest Area" Break
+        Case 6: Display "Anda memilih: Dibalik Pintu Kematian" Break
+        Case 7: Display "Anda memilih: Superman" Break
+        Case 8: Display "Anda memilih: Tumbal Darah" Break
+        Case 9: Display "Anda memilih: Rangga & Cinta" Break
+        Case 10: Display "Anda memilih: Good Boy" Break
+        Default: Display "Pilihan tidak valid." Break
+    EndSwitch
+    Display "Pilih waktu tayang yang kamu mau (Pagi/Siang/Sore/Malam): "
+    Input tayang
+    Switch (tayang)
+        Case "Pagi": Display "Jam 10.00 - 12.00" Break
+        Case "Siang": Display "Jam 13.00 - 15.00" Break
+        Case "Sore": Display "Jam 16.00 - 18.00" Break
+        Case "Malam": Display "Jam 19.00 - 23.00" Break
+        Default: Display "Jadwal Tidak Tersedia" Break
+    EndSwitch
+    Display "Masukkan jumlah tiket yang dibeli (min: 1): "
+    Input tiket
+End Module
