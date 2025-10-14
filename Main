@@ -2,17 +2,18 @@ Start
     Module Main()
         Declare Char pilih
         Display "==========================="
-        Display "        RESERVASI BIOSKOP        "
+        Display "     RESERVASI BIOSKOP     "
         Display "==========================="
         Display "Menu Utama"
         Display "1. Beli Tiket"
         Display "2. Beli Snack"
         Display "3. Cari Film"
+        Display "4. Keluar"
         Display "==========================="
-        Display "Pilih Menu (1-3): "
+        Display "Pilih Menu (1-4): "
         Input pilih
-        If pilih < 1 OR pilih > 3 Then
-            Display "Error! Pilihan harus 1-3"
+        If pilih < 1 OR pilih > 4 Then
+            Display "Error! Pilihan harus 1-4"
             CONTINUE
         EndIf
         Switch (pilih)
@@ -25,11 +26,13 @@ Start
             Case 3:
                 Call Module Film()
                 Break
+            Case 4:
+                Display "Terima kasih telah menggunakan sistem reservasi bioskop!"
+                Stop
+                break
             Default:
                 Display "Pilihan Tidak Ada di Menu"
                 Break
         End Switch
     End Module
 End
-
-
