@@ -1,19 +1,19 @@
 Module Snack()
-Declare Int pilihansnack
-Repeat
-    Display "=============================="
-    Display "         PILIHAN SNACK         "
-    Display "=============================="
-    Display "1. Coca Cola + Popcorn XL (150.000)"
-    Display "2. Popcorn Manis XL (50.000)"
-    Display "3. Popcorn Asin XL + Sprite (150.000)"
-    Display "4. Popcorn Asin XL (50.000)"
-    Display "5. Popcorn Manis + Asin + Sprite (250.000)"
-    Display "=============================="
-    Display "Pilih Snack (1-5): "
-    Input pilihansnack
-    If pilihansnack < 1 OR pilihansnack > 5 Then
-        Display "Error! Harus memilih 1-5"
-    EndIf
-Until pilihansnack >= 1 AND pilihansnack <= 5
+    Declare Int pilihansnack
+    Repeat
+        Display "=============================="
+        Display "         PILIHAN SNACK         "
+        Display "=============================="
+        Display "1. Coca Cola + Popcorn XL (150.000)"
+        Display "2. Popcorn Manis XL (50.000)"
+        Display "3. Popcorn Asin XL + Sprite (150.000)"
+        Display "4. Popcorn Asin XL (50.000)"
+        Display "5. Popcorn Manis + Asin + Sprite (250.000)"
+        Display "=============================="
+        Display "Pilih Snack (1-5): "
+        Input pilihansnack
+        If pilihansnack < 1 OR pilihansnack > 5 Then
+            Display "Error! Harus memilih 1-5"
+        EndIf
+    Until pilihansnack >= 1 AND pilihansnack <= 5
 End Module

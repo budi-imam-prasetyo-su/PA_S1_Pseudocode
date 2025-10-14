@@ -28,7 +28,7 @@ Start
             Default:
                 Display "Pilihan Tidak Ada di Menu"
                 Break
-        EndSwitch
+        End Switch
     End Module
 End
 
