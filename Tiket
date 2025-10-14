@@ -1,7 +1,8 @@
-Module Film()
+Module Tiket()
     Declare Int tiket
     Declare Char tayang
     Declare Char film
+    Declare Array Kursi[99]
 
     Display "============================"
     Display "       SEDANG TAYANG        "
@@ -23,7 +24,7 @@ Module Film()
         Case 1: Display "Anda memilih: Tukar Takdir" Break
         Case 2: Display "Anda memilih: Jembatan Shiratal Mustaqim" Break
         Case 3: Display "Anda memilih: Tron: Ares" Break
-        Case 4: Display "Anda memilih: Chainsaw Man – The Movie: Reze Arc" Break
+        Case 4: Display "Anda memilih: Chainsaw Man - The Movie: Reze Arc" Break
         Case 5: Display "Anda memilih: Rest Area" Break
         Case 6: Display "Anda memilih: Dibalik Pintu Kematian" Break
         Case 7: Display "Anda memilih: Superman" Break
@@ -32,6 +33,7 @@ Module Film()
         Case 10: Display "Anda memilih: Good Boy" Break
         Default: Display "Pilihan tidak valid." Break
     EndSwitch
+
     Display "Pilih waktu tayang yang kamu mau (Pagi/Siang/Sore/Malam): "
     Input tayang
     Switch (tayang)
@@ -41,6 +43,21 @@ Module Film()
         Case "Malam": Display "Jam 19.00 - 23.00" Break
         Default: Display "Jadwal Tidak Tersedia" Break
     EndSwitch
+
     Display "Masukkan jumlah tiket yang dibeli (min: 1): "
     Input tiket
+    If tiket < 1
+        Display "Jumlah tiket minimal 1!"
+        Stop
+    End If
+
+    For i = 1 To tiket
+        Display "Masukkan kode kursi ke-", i, " (misal C1, D4): "
+        Input Kursi[i]
+    End For
+
+    Display "Kursi yang Anda pilih:"
+    For i = 1 To tiket
+        Display Kursi[i]
+    End For
 End Module

@@ -17,7 +17,7 @@ Start
         EndIf
         Switch (pilih)
             Case 1:
-                Call Module Film()
+                Call Module Tiket()
                 Break
             Case 2:
                 Call Module Snack()
