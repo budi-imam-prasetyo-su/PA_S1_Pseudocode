@@ -1,8 +1,8 @@
 Module Tiket()
-    Declare Int tiket
-    Declare Char tayang
-    Declare Char film
+    Declare Int tiket, film, i
+    Declare String tayang
     Declare Array Kursi[99]
+    Declare String namaFilm
 
     Display "============================"
     Display "       SEDANG TAYANG        "
@@ -18,51 +18,112 @@ Module Tiket()
     Display "9. Rangga & Cinta"
     Display "10. Good Boy"
 
-    Display "Pilih Film (Angka): "
+    Display "Pilih Film (1-10): "
     Input film
+    
+    If ValidasiMenu(film, 1, 10) == False Then
+        Display "Error! Pilihan harus 1-10"
+        Return
+    EndIf
+    
     Switch (film)
-        Case 1: Display "Anda memilih: Tukar Takdir" Break
-        Case 2: Display "Anda memilih: Jembatan Shiratal Mustaqim" Break
-        Case 3: Display "Anda memilih: Tron: Ares" Break
-        Case 4: Display "Anda memilih: Chainsaw Man - The Movie: Reze Arc" Break
-        Case 5: Display "Anda memilih: Rest Area" Break
-        Case 6: Display "Anda memilih: Dibalik Pintu Kematian" Break
-        Case 7: Display "Anda memilih: Superman" Break
-        Case 8: Display "Anda memilih: Tumbal Darah" Break
-        Case 9: Display "Anda memilih: Rangga & Cinta" Break
-        Case 10: Display "Anda memilih: Good Boy" Break
-        Default: Display "Pilihan tidak valid." Break
+        Case 1: 
+            namaFilm = "Tukar Takdir"
+            Display "Anda memilih: Tukar Takdir" 
+            Break
+        Case 2: 
+            namaFilm = "Jembatan Shiratal Mustaqim"
+            Display "Anda memilih: Jembatan Shiratal Mustaqim" 
+            Break
+        Case 3: 
+            namaFilm = "Tron: Ares"
+            Display "Anda memilih: Tron: Ares" 
+            Break
+        Case 4: 
+            namaFilm = "Chainsaw Man - The Movie: Reze Arc"
+            Display "Anda memilih: Chainsaw Man - The Movie: Reze Arc" 
+            Break
+        Case 5: 
+            namaFilm = "Rest Area"
+            Display "Anda memilih: Rest Area" 
+            Break
+        Case 6: 
+            namaFilm = "Dibalik Pintu Kematian"
+            Display "Anda memilih: Dibalik Pintu Kematian" 
+            Break
+        Case 7: 
+            namaFilm = "Superman"
+            Display "Anda memilih: Superman" 
+            Break
+        Case 8: 
+            namaFilm = "Tumbal Darah"
+            Display "Anda memilih: Tumbal Darah" 
+            Break
+        Case 9: 
+            namaFilm = "Rangga & Cinta"
+            Display "Anda memilih: Rangga & Cinta" 
+            Break
+        Case 10: 
+            namaFilm = "Good Boy"
+            Display "Anda memilih: Good Boy" 
+            Break
     EndSwitch
 
     Display "Pilih waktu tayang yang kamu mau (Pagi/Siang/Sore/Malam): "
     Input tayang
     Switch (tayang)
-        Case "Pagi": Display "Jam 10.00 - 12.00" Break
-        Case "Siang": Display "Jam 13.00 - 15.00" Break
-        Case "Sore": Display "Jam 16.00 - 18.00" Break
-        Case "Malam": Display "Jam 19.00 - 23.00" Break
-        Default: Display "Jadwal Tidak Tersedia" Break
+        Case "Pagi": 
+            Display "Jam 10.00 - 12.00" 
+            Break
+        Case "Siang": 
+            Display "Jam 13.00 - 15.00" 
+            Break
+        Case "Sore": 
+            Display "Jam 16.00 - 18.00" 
+            Break
+        Case "Malam": 
+            Display "Jam 19.00 - 23.00" 
+            Break
+        Default: 
+            Display "Jadwal Tidak Tersedia. Silahkan pilih ulang!"
+            Return
     EndSwitch
 
-    Display "Masukkan jumlah tiket yang dibeli (min: 1): "
+    Display "Masukkan jumlah tiket yang dibeli (min: 1, max: 10): "
     Input tiket
-    If tiket < 1
-        Display "Jumlah tiket minimal 1!"
-        Else
-        Display "Silahkan memilih Kursi"
-    End If
-
+    If tiket < 1 OR tiket > 10 Then
+        Display "Jumlah tiket harus antara 1-10!"
+        Return
+    EndIf
+    
+    Display "Silahkan memilih Kursi"
     For i = 1 To tiket
-        If (Tiket == 1) then
-        Display "Kode kursi yang diinginkan (misal C1, D4): "
-        Input Kursi[i]
+        If tiket == 1 Then
+            Display "Kode kursi yang diinginkan (misal C1, D4): "
+            Input Kursi[i]
         Else
-        Display "Kode kursi ke-%d (misal C1, D4): "
-        Input Kursi[i]
+            Display "Kode kursi ke-", i, " (misal C1, D4): "
+            Input Kursi[i]
+        EndIf
     End For
 
-    Display "Kursi yang Anda pilih:"
+    Display "=============================="
+    Display "Ringkasan Pemesanan:"
+    Display "Film    : ", namaFilm
+    Display "Tayang  : ", tayang
+    Display "Jumlah  : ", tiket, " tiket"
+    Display "Kursi   : "
     For i = 1 To tiket
-        Display Kursi[i]
+        Display "  ", Kursi[i]
     End For
+    Display "Harga   : Rp ", (tiket * 50000)
+    Display "=============================="
+    
+    Display "Lanjut ke pembayaran? (Ya/Tidak): "
+    Input konfirmasi
+    If konfirmasi == "Ya" OR konfirmasi == "ya" Then
+        Call Pembayaran(tiket * 50000)
+    Else
+        Display "Pemesanan dibatalkan."
+    EndIf
 End Module

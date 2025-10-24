@@ -1,0 +1,35 @@
+Module RiwayatTransaksi()
+    Declare Int pilihan
+    Declare String dummy
+    Declare Int i
+    Declare Array riwayat[50]
+    Declare Int totalRiwayat
+    
+    Display "=============================="
+    Display "    RIWAYAT TRANSAKSI         "
+    Display "=============================="
+    
+    riwayat[0] = "TRX001|15/10/2025|Tukar Takdir|Siang|2|Rp 100.000"
+    riwayat[1] = "TRX002|15/10/2025|Superman|Malam|3|Rp 150.000"
+    riwayat[2] = "TRX003|16/10/2025|Tron: Ares|Sore|1|Rp 50.000"
+    totalRiwayat = 3
+    
+    Display "=============================="
+    Display "  DAFTAR RIWAYAT TRANSAKSI    "
+    Display "=============================="
+    
+    If totalRiwayat == 0 Then
+        Display "Belum ada transaksi."
+    Else
+        Display "No. | Kode   | Tanggal    | Film             | Waktu | Tiket | Total"
+        Display "------------------------------------------------------------------------"
+        For i = 0 To totalRiwayat - 1
+            Display (i+1), ". ", riwayat[i]
+        End For
+        Display "=============================="
+        Display "Total Transaksi: ", totalRiwayat
+    EndIf
+    
+    Display "Tekan enter untuk kembali..."
+    Input dummy
+End Module

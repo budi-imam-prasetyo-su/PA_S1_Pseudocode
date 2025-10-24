@@ -2,11 +2,11 @@ Module Struk(namaFilm, waktuTayang, jumlahTiket, kursiArray, jumlahSnack, snackA
     Declare String tanggal, waktu
     Declare Int i
     
-    tanggal = GetCurrentDate()
-    waktu = GetCurrentTime()
+    tanggal = Date.Now()
+    waktu = Time.Now()
     
-    Display "\n=============================="
-    Display "         BIOSKOP XYZ          "
+    Display "=============================="
+    Display "       BIOSKOP SIGMA          "
     Display "=============================="
     Display "      STRUK PEMBAYARAN        "
     Display "=============================="
@@ -15,7 +15,7 @@ Module Struk(namaFilm, waktuTayang, jumlahTiket, kursiArray, jumlahSnack, snackA
     Display "=============================="
     
     If namaFilm != "" Then
-        Display "\n--- DETAIL TIKET ---"
+        Display "--- DETAIL TIKET ---"
         Display "Film   : ", namaFilm
         Display "Tayang : ", waktuTayang
         Display "Jumlah : ", jumlahTiket, " tiket"
@@ -27,7 +27,7 @@ Module Struk(namaFilm, waktuTayang, jumlahTiket, kursiArray, jumlahSnack, snackA
     EndIf
     
     If jumlahSnack > 0 Then
-        Display "\n--- DETAIL SNACK ---"
+        Display "--- DETAIL SNACK ---"
         Display "Jumlah Paket: ", jumlahSnack
         Display "Paket yang dipilih:"
         For i = 1 To jumlahSnack
@@ -41,15 +41,15 @@ Module Struk(namaFilm, waktuTayang, jumlahTiket, kursiArray, jumlahSnack, snackA
         End For
     EndIf
     
-    Display "\n=============================="
+    Display "=============================="
     Display "TOTAL PEMBAYARAN: Rp ", totalHarga
     Display "=============================="
     Display "   Terima Kasih Telah          "
-    Display "   Berkunjung di Bioskop XYZ   "
+    Display "   Berkunjung di Bioskop SIGMA "
     Display "   Selamat Menonton!           "
     Display "=============================="
     
-    Display "\nSimpan struk ini sebagai bukti pembelian"
+    Display "Simpan struk ini sebagai bukti pembelian"
     Display "Tekan enter untuk kembali ke menu utama..."
     Input dummy
 EndModule

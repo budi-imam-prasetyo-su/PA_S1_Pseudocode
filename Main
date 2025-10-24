@@ -1,6 +1,6 @@
 Start
     Module Main()
-        Declare Char pilih
+        Declare Int pilih
         Do
             Display "==========================="
             Display "       BIOSKOP SIGMA       "
@@ -9,12 +9,13 @@ Start
             Display "1. Beli Tiket"
             Display "2. Beli Snack"
             Display "3. Cari Film"
-            Display "4. Keluar"
+            Display "4. Riwayat Transaksi"
+            Display "5. Keluar"
             Display "==========================="
-            Display "Pilih Menu (1-4): "
+            Display "Pilih Menu (1-5): "
             Input pilih
-            If ValidasiMenu(pilih, 1, 4) == False Then
-                Display "Error! Pilihan harus 1-4"
+            If ValidasiMenu(pilih, 1, 5) == False Then
+                Display "Error! Pilihan harus 1-5"
                 CONTINUE
             EndIf
 
@@ -29,9 +30,12 @@ Start
                     Call CariFilm()
                     Break
                 Case 4:
+                    Call RiwayatTransaksi()
+                    Break
+                Case 5:
                     Display "Terima kasih telah menggunakan sistem reservasi bioskop!"
                     Stop
             EndSwitch
-        While pilih == 4
+        While pilih != 5
     EndModule
 End

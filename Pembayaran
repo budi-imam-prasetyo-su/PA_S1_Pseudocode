@@ -1,59 +1,23 @@
 Module Pembayaran(totalHarga)
-    Declare Int metodePembayaran
     Declare Float uangBayar, kembalian
-    Declare String nomorKartu, namaKartu
-    
+
     Display "=============================="
     Display "       PEMBAYARAN             "
     Display "=============================="
     Display "Total yang harus dibayar: Rp ", totalHarga
     Display "=============================="
-    Display "Pilih Metode Pembayaran:"
-    Display "1. Tunai"
-    Display "2. Debit/Kredit"
-    Display "3. E-Wallet (GoPay/OVO/Dana)"
-    Display "=============================="
-    Display "Pilih metode (1-3): "
-    Input metodePembayaran
+    Display "Masukkan jumlah uang: Rp "
+    Input uangBayar
 
-    If ValidasiMenu(metodePembayaran, 1, 3) == False Then
-        Display "Error! Pilihan harus 1-3"
+    If uangBayar < totalHarga Then
+        Display "Uang tidak cukup!"
         Return False
     EndIf
 
-    Switch (metodePembayaran)
-        Case 1:
-            Display "\n--- PEMBAYARAN TUNAI ---"
-            Display "Masukkan jumlah uang: Rp "
-            Input uangBayar
-            
-            If uangBayar < totalHarga Then
-                Display "Uang tidak cukup!"
-                Return False
-            EndIf
-            
-            kembalian = uangBayar - totalHarga
-            Display "Kembalian: Rp ", kembalian
-            Break
-            
-        Case 2:
-            Display "\n--- PEMBAYARAN KARTU ---"
-            Display "Masukkan nama pemegang kartu: "
-            Input namaKartu
-            Display "Masukkan nomor kartu (16 digit): "
-            Input nomorKartu
-            Display "Pembayaran berhasil diproses!"
-            Break
-            
-        Case 3:
-            Display "\n--- PEMBAYARAN E-WALLET ---"
-            Display "Scan QR Code untuk pembayaran..."
-            Display "Menunggu konfirmasi pembayaran..."
-            Display "Pembayaran berhasil!"
-            Break
-    EndSwitch
+    kembalian = uangBayar - totalHarga
+    Display "Kembalian: Rp ", kembalian
 
-    Display "\n=============================="
+    Display "=============================="
     Display "   PEMBAYARAN BERHASIL!       "
     Display "=============================="
     Return True

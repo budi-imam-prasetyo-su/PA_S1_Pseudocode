@@ -4,7 +4,7 @@ Module CariFilm()
     Declare Array Genre[10] = ["Drama", "Horror", "Sci-Fi", "Action", "Horror", "Horror", "Action", "Horror", "Romance", "Family"]
     Declare Array Rating[10] = [7.5, 6.8, 8.2, 8.5, 6.5, 7.0, 8.0, 6.2, 7.8, 7.3]
     Declare Int i
-    Declare Boolean found = False
+    Declare Boolean Ketemu = False
 
     Display "=============================="
     Display "       CARI FILM              "
@@ -12,12 +12,12 @@ Module CariFilm()
     Display "Masukkan kata kunci film: "
     Input kataKunci
 
-    Display "\nHasil Pencarian:"
+    Display "Hasil Pencarian:"
     Display "=============================="
     
     For i = 0 To 9
         If Film[i] Contains kataKunci Then
-            found = True
+            Ketemu = True
             Display (i+1), ". ", Film[i]
             Display "   Genre: ", Genre[i]
             Display "   Rating: ", Rating[i], "/10"
@@ -25,10 +25,10 @@ Module CariFilm()
         EndIf
     End For
 
-    If found == False Then
+    If Ketemu == False Then
         Display "Film tidak ditemukan!"
     EndIf
 
-    Display "\nTekan enter untuk kembali ke menu utama..."
+    Display "Tekan enter untuk kembali ke menu utama..."
     Input dummy
 EndModule

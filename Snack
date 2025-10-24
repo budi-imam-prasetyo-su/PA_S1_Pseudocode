@@ -1,38 +1,67 @@
 Module Snack()
-    Declare Int pilihanPaket
+    Declare Int jumlahPaket, i, totalHarga
     Declare Int paket[99]
-    Declare Int i
+    Declare String konfirmasi
+    
+    totalHarga = 0
+    
     Display "=============================="
-    Display "         PILIHAN Paket        "
+    Display "       PILIHAN PAKET          "
     Display "=============================="
-    Display "1. Coca Cola + Popcorn XL (150.000)"
-    Display "2. Popcorn Manis XL (50.000)"
-    Display "3. Popcorn Asin XL + Sprite (150.000)"
-    Display "4. Popcorn Asin XL (50.000)"
-    Display "5. Popcorn Manis + Asin + Sprite (250.000)"
-    Display "6. Keluar"
+    Display "1. Coca Cola + Popcorn XL (Rp 150.000)"
+    Display "2. Popcorn Manis XL (Rp 50.000)"
+    Display "3. Popcorn Asin XL + Sprite (Rp 150.000)"
+    Display "4. Popcorn Asin XL (Rp 50.000)"
+    Display "5. Popcorn Manis + Asin + Sprite (Rp 250.000)"
+    Display "6. Kembali"
     Display "=============================="
-    Display "Pilih Paket (1-5): "
-    Input pilihanPaket
 
-    Display "Masukkan jumlah Paket yang dibeli: "
+    Display "Masukkan jumlah paket yang dibeli (1-10): "
     Input jumlahPaket
-    If jumlahPaket > 5 Then
-        Display "Selamat Menonton"
-        Stop
-    End If
+    
+    If jumlahPaket < 1 OR jumlahPaket > 10 Then
+        Display "Jumlah paket harus antara 1-10!"
+        Return
+    EndIf
 
     For i = 1 To jumlahPaket
-        If (pilihanPaket == 1)
-            Display "Pilih Paket yang diinginkan: ", i
-            Input paket[i]
-        Else
-            Display "Pilih Paket yang diinginkan ke-", i, ": "
-            Input paket[i]
+        Display "Pilih paket ke-", i, " (1-5): "
+        Input paket[i]
+        
+        If ValidasiMenu(paket[i], 1, 5) == False Then
+            Display "Error! Pilihan harus 1-5"
+            Return
+        EndIf
+        
+        Switch (paket[i])
+            Case 1: totalHarga = totalHarga + 150000 Break
+            Case 2: totalHarga = totalHarga + 50000 Break
+            Case 3: totalHarga = totalHarga + 150000 Break
+            Case 4: totalHarga = totalHarga + 50000 Break
+            Case 5: totalHarga = totalHarga + 250000 Break
+        EndSwitch
     End For
 
+    Display "=============================="
     Display "Paket yang Anda pilih:"
     For i = 1 To jumlahPaket
-        Display paket[i]
+        Switch (paket[i])
+            Case 1: Display i, ". Coca Cola + Popcorn XL (Rp 150.000)" Break
+            Case 2: Display i, ". Popcorn Manis XL (Rp 50.000)" Break
+            Case 3: Display i, ". Popcorn Asin XL + Sprite (Rp 150.000)" Break
+            Case 4: Display i, ". Popcorn Asin XL (Rp 50.000)" Break
+            Case 5: Display i, ". Popcorn Manis + Asin + Sprite (Rp 250.000)" Break
+        EndSwitch
     End For
+    Display "=============================="
+    Display "Total Harga: Rp ", totalHarga
+    Display "=============================="
+    
+    Display "Lanjut ke pembayaran? (Ya/Tidak): "
+    Input konfirmasi
+    If konfirmasi == "Ya" OR konfirmasi == "ya" Then
+        Call Pembayaran(totalHarga)
+    Else
+        Display "Pemesanan dibatalkan."
+    EndIf
 End Module
