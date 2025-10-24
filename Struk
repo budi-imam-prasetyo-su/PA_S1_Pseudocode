@@ -1,0 +1,55 @@
+Module Struk(namaFilm, waktuTayang, jumlahTiket, kursiArray, jumlahSnack, snackArray, totalHarga)
+    Declare String tanggal, waktu
+    Declare Int i
+    
+    tanggal = GetCurrentDate()
+    waktu = GetCurrentTime()
+    
+    Display "\n=============================="
+    Display "         BIOSKOP XYZ          "
+    Display "=============================="
+    Display "      STRUK PEMBAYARAN        "
+    Display "=============================="
+    Display "Tanggal: ", tanggal
+    Display "Waktu  : ", waktu
+    Display "=============================="
+    
+    If namaFilm != "" Then
+        Display "\n--- DETAIL TIKET ---"
+        Display "Film   : ", namaFilm
+        Display "Tayang : ", waktuTayang
+        Display "Jumlah : ", jumlahTiket, " tiket"
+        Display "Kursi  : "
+        For i = 1 To jumlahTiket
+            Display "  ", kursiArray[i]
+        End For
+        Display "Harga  : Rp ", (jumlahTiket * 50000)
+    EndIf
+    
+    If jumlahSnack > 0 Then
+        Display "\n--- DETAIL SNACK ---"
+        Display "Jumlah Paket: ", jumlahSnack
+        Display "Paket yang dipilih:"
+        For i = 1 To jumlahSnack
+            Switch (snackArray[i])
+                Case 1: Display "  ", i, ". Coca Cola + Popcorn XL (Rp 150.000)" Break
+                Case 2: Display "  ", i, ". Popcorn Manis XL (Rp 50.000)" Break
+                Case 3: Display "  ", i, ". Popcorn Asin XL + Sprite (Rp 150.000)" Break
+                Case 4: Display "  ", i, ". Popcorn Asin XL (Rp 50.000)" Break
+                Case 5: Display "  ", i, ". Popcorn Manis + Asin + Sprite (Rp 250.000)" Break
+            EndSwitch
+        End For
+    EndIf
+    
+    Display "\n=============================="
+    Display "TOTAL PEMBAYARAN: Rp ", totalHarga
+    Display "=============================="
+    Display "   Terima Kasih Telah          "
+    Display "   Berkunjung di Bioskop XYZ   "
+    Display "   Selamat Menonton!           "
+    Display "=============================="
+    
+    Display "\nSimpan struk ini sebagai bukti pembelian"
+    Display "Tekan enter untuk kembali ke menu utama..."
+    Input dummy
+EndModule

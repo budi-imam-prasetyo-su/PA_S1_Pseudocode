@@ -1,0 +1,7 @@
+Module ValidasiMenu(pilih, vMin, vMax)
+    If pilih >= vMin && pilih <= vMax Then
+        Return True
+    Else
+        Return False
+    EndIf
+EndModule

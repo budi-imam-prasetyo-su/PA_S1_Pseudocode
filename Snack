@@ -1,39 +1,38 @@
 Module Snack()
-    Declare Int pilihansnack
-    Declare Int snack
+    Declare Int pilihanPaket
+    Declare Int paket[99]
     Declare Int i
-    Repeat
-        Display "=============================="
-        Display "         PILIHAN SNACK         "
-        Display "=============================="
-        Display "1. Coca Cola + Popcorn XL (150.000)"
-        Display "2. Popcorn Manis XL (50.000)"
-        Display "3. Popcorn Asin XL + Sprite (150.000)"
-        Display "4. Popcorn Asin XL (50.000)"
-        Display "5. Popcorn Manis + Asin + Sprite (250.000)"
-        Display "6. Keluar"
-        Display "=============================="
-        Display "Pilih Snack (1-5): "
-        Input pilihansnack
+    Display "=============================="
+    Display "         PILIHAN Paket        "
+    Display "=============================="
+    Display "1. Coca Cola + Popcorn XL (150.000)"
+    Display "2. Popcorn Manis XL (50.000)"
+    Display "3. Popcorn Asin XL + Sprite (150.000)"
+    Display "4. Popcorn Asin XL (50.000)"
+    Display "5. Popcorn Manis + Asin + Sprite (250.000)"
+    Display "6. Keluar"
+    Display "=============================="
+    Display "Pilih Paket (1-5): "
+    Input pilihanPaket
 
-Display "Masukkan jumlah Snack yang dibeli: "
-    Input pilihansnack
-    If pilihansnack > 5 Then
+    Display "Masukkan jumlah Paket yang dibeli: "
+    Input jumlahPaket
+    If jumlahPaket > 5 Then
         Display "Selamat Menonton"
         Stop
     End If
 
-    For i = 1 To pilihansnack
-        If (pilihansnack == 1)
-        Display "Pilih Paket yang diinginkan: ", i
-        Input snack[i]
+    For i = 1 To jumlahPaket
+        If (pilihanPaket == 1)
+            Display "Pilih Paket yang diinginkan: ", i
+            Input paket[i]
         Else
-        Display "Pilih Paket yang diinginkan ke-", i, ": "
-        Input snack[i]
+            Display "Pilih Paket yang diinginkan ke-", i, ": "
+            Input paket[i]
     End For
 
     Display "Paket yang Anda pilih:"
-    For i = 1 To pilihansnack
-        Display snack[i]
+    For i = 1 To jumlahPaket
+        Display paket[i]
     End For
 End Module
