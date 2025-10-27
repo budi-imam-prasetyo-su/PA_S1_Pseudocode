@@ -4,4 +4,4 @@ Module ValidasiMenu(pilih, vMin, vMax)
     Else
         Return False
     EndIf
-EndModule
+EndModule   
