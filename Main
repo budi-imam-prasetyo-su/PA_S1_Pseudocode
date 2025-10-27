@@ -1,7 +1,7 @@
 Start
     Module Main()
         Declare Int pilih
-        Do
+        Repeat
             Display "==========================="
             Display "       BIOSKOP SIGMA       "
             Display "==========================="
@@ -16,7 +16,7 @@ Start
             Input pilih
             If ValidasiMenu(pilih, 1, 5) == False Then
                 Display "Error! Pilihan harus 1-5"
-                CONTINUE
+                Until pilih <= 1 AND pilih >= 5
             EndIf
 
             Switch (pilih)

@@ -16,20 +16,20 @@ Module Snack()
     Display "6. Kembali"
     Display "=============================="
 
-    Display "Masukkan jumlah paket yang dibeli (1-10): "
+    Display "Masukkan jumlah paket yang dibeli (1-6): "
     Input jumlahPaket
     
-    If jumlahPaket < 1 OR jumlahPaket > 10 Then
-        Display "Jumlah paket harus antara 1-10!"
+    If jumlahPaket < 1 OR jumlahPaket > 6 Then
+        Display "Jumlah paket harus antara 1-6!"
         Return
     EndIf
 
     For i = 1 To jumlahPaket
-        Display "Pilih paket ke-", i, " (1-5): "
+        Display "Pilih paket ke-", i, " (1-6): "
         Input paket[i]
-        
-        If ValidasiMenu(paket[i], 1, 5) == False Then
-            Display "Error! Pilihan harus 1-5"
+
+        If ValidasiMenu(paket[i], 1, 6) == False Then
+            Display "Error! Pilihan harus 1-6"
             Return
         EndIf
         
